@@ -5,6 +5,9 @@ class Guesser {
   }
 
   guess(n) {
+    if (this.lives <= 0) throw Error("Out of lives");
+    if (n === this.number) return true;
+    this.lives--;
     return false;
   }
 }
